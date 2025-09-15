@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -32,16 +34,19 @@ public class Main {
         int[] salary2 = {10000, 15000, 12000, 14000, 11000};
         int salaryAverage = 0;
         for (int i = 0; i <= salary2.length - 1; i++) {
-            salaryAverage += salary2[i] / 5;
+            salaryAverage += salary2[i] / salary2.length;
         }
         System.out.println("Средняя сумма трат за месяц составила " + salaryAverage + " рублей");
 
         System.out.println("Задача 4");
         //#4
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length-1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
         }
+        System.out.println(reverseFullName);
     }
-
 }
+
